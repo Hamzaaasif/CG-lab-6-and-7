@@ -9,7 +9,7 @@ class car
     const img = new Image();
     img.src='images/car.jpg';
     img.onload=function() {
-    context.drawImage(img,x,y);
+    context.drawImage(img,this.x,this.y);
     };
     this.img=img;
   }
@@ -22,7 +22,6 @@ class car
 
 car.prototype.advancePosition = function(x , y)
 {
-  console.log("proto Type function");
  this.x = this.lerp(this.x , this.x + x , 1);
  this.y = this.lerp(this.y , this.y + y , 1);
 }
